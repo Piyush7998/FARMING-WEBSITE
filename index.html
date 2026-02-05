@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmCare - Farming Consultancy Services</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-seedling"></i>
+                <span>FarmCare</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#form">Register</a></li>
+                <li><a href="#tips">Tips</a></li>
+                <li><a href="#schedule">Schedule</a></li>
+                <li><a href="#calculators">Calculators</a></li>
+                <li><a href="#calendar">Calendar</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="search-toggle" id="searchToggle"><i class="fas fa-search"></i></button>
+                <button class="dark-mode-toggle" id="darkModeToggle"><i class="fas fa-moon"></i></button>
+            </div>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Welcome to <span class="highlight">FarmCare</span></h1>
+            <p class="hero-subtitle">Your trusted partner for modern farming solutions</p>
+            <p class="hero-description">Get personalized daily schedules, expert tips, and comprehensive guidance for crop, water, and fertilizer management</p>
+            <a href="#form" class="cta-button">Get Started</a>
+        </div>
+        <div class="hero-animation">
+            <div class="floating-icon"><i class="fas fa-tractor"></i></div>
+            <div class="floating-icon"><i class="fas fa-wheat-awn"></i></div>
+            <div class="floating-icon"><i class="fas fa-droplet"></i></div>
+            <div class="floating-icon"><i class="fas fa-leaf"></i></div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h3>Daily Schedule</h3>
+                    <p>Personalized daily farming schedules tailored to your crops and location</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-seedling"></i>
+                    </div>
+                    <h3>Crop Management</h3>
+                    <p>Expert advice on crop selection, planting, and maintenance</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Water Management</h3>
+                    <p>Efficient irrigation strategies and water conservation techniques</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-flask"></i>
+                    </div>
+                    <h3>Fertilizer Management</h3>
+                    <p>Optimal fertilizer usage for healthy crops and better yields</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Farmer Registration Form -->
+    <section id="form" class="form-section">
+        <div class="container">
+            <h2 class="section-title">Register Your Farm</h2>
+            <p class="section-subtitle">Provide your details to receive personalized farming guidance</p>
+            <form id="farmerForm" class="farmer-form">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="farmerName"><i class="fas fa-user"></i> Full Name</label>
+                        <input type="text" id="farmerName" name="farmerName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="phone"><i class="fas fa-phone"></i> Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="location"><i class="fas fa-map-marker-alt"></i> Location/Address</label>
+                        <input type="text" id="location" name="location" required>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="farmSize"><i class="fas fa-ruler-combined"></i> Farm Size (Acres)</label>
+                        <input type="number" id="farmSize" name="farmSize" min="0" step="0.1" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="cropType"><i class="fas fa-seedling"></i> Crop Type</label>
+                        <select id="cropType" name="cropType" required>
+                            <option value="">Select Crop Type</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="rice">Rice</option>
+                            <option value="corn">Corn/Maize</option>
+                            <option value="cotton">Cotton</option>
+                            <option value="sugarcane">Sugarcane</option>
+                            <option value="vegetables">Vegetables</option>
+                            <option value="fruits">Fruits</option>
+                            <option value="pulses">Pulses</option>
+                            <option value="oilseeds">Oilseeds</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="soilType"><i class="fas fa-mountain"></i> Soil Type</label>
+                        <select id="soilType" name="soilType" required>
+                            <option value="">Select Soil Type</option>
+                            <option value="clay">Clay</option>
+                            <option value="sandy">Sandy</option>
+                            <option value="loamy">Loamy</option>
+                            <option value="silt">Silt</option>
+                            <option value="peaty">Peaty</option>
+                            <option value="chalky">Chalky</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="irrigationType"><i class="fas fa-water"></i> Irrigation Type</label>
+                        <select id="irrigationType" name="irrigationType" required>
+                            <option value="">Select Irrigation Type</option>
+                            <option value="drip">Drip Irrigation</option>
+                            <option value="sprinkler">Sprinkler</option>
+                            <option value="flood">Flood Irrigation</option>
+                            <option value="rainfed">Rainfed</option>
+                            <option value="manual">Manual Watering</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="plantingDate"><i class="fas fa-calendar"></i> Planting Date</label>
+                    <input type="date" id="plantingDate" name="plantingDate" required>
+                </div>
+                <div class="form-group">
+                    <label for="additionalInfo"><i class="fas fa-info-circle"></i> Additional Information</label>
+                    <textarea id="additionalInfo" name="additionalInfo" rows="4" placeholder="Any specific concerns or requirements..."></textarea>
+                </div>
+                <button type="submit" class="submit-button">
+                    <i class="fas fa-paper-plane"></i> Submit Registration
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Tips Section -->
+    <section id="tips" class="tips-section">
+        <div class="container">
+            <h2 class="section-title">Expert Farming Tips</h2>
+            <div class="tips-tabs">
+                <button class="tab-button active" data-tab="crop">Crop Management</button>
+                <button class="tab-button" data-tab="water">Water Management</button>
+                <button class="tab-button" data-tab="fertilizer">Fertilizer Management</button>
+            </div>
+            
+            <div class="tips-content">
+                <div class="tip-panel active" id="crop-tips">
+                    <div class="tip-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Seed Selection</h3>
+                        <p>Choose high-quality, disease-resistant seeds adapted to your local climate and soil conditions.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-calendar-check"></i>
+                        <h3>Planting Time</h3>
+                        <p>Plant crops at the optimal time based on weather patterns and soil temperature for best germination.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-bug"></i>
+                        <h3>Pest Control</h3>
+                        <p>Monitor crops regularly for pests and diseases. Use integrated pest management (IPM) strategies.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-cut"></i>
+                        <h3>Pruning & Weeding</h3>
+                        <p>Regular pruning and weeding help crops grow healthier and reduce competition for nutrients.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-eye"></i>
+                        <h3>Crop Monitoring</h3>
+                        <p>Regular monitoring helps identify issues early and take corrective measures promptly.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Harvest Timing</h3>
+                        <p>Harvest at the right maturity stage to ensure maximum yield and quality.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-panel" id="water-tips">
+                    <div class="tip-card">
+                        <i class="fas fa-tint"></i>
+                        <h3>Water Scheduling</h3>
+                        <p>Water crops early morning or late evening to minimize evaporation losses.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-ruler"></i>
+                        <h3>Water Measurement</h3>
+                        <p>Use soil moisture sensors to determine when and how much water your crops need.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-droplet"></i>
+                        <h3>Drip Irrigation</h3>
+                        <p>Drip irrigation delivers water directly to plant roots, reducing waste by up to 50%.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-cloud-rain"></i>
+                        <h3>Rainwater Harvesting</h3>
+                        <p>Collect and store rainwater during monsoon season for use during dry periods.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>Mulching</h3>
+                        <p>Apply organic mulch to retain soil moisture and reduce water evaporation.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-recycle"></i>
+                        <h3>Water Recycling</h3>
+                        <p>Reuse treated wastewater for irrigation where appropriate to conserve fresh water.</p>
+                    </div>
+                </div>
+                
+                <div class="tip-panel" id="fertilizer-tips">
+                    <div class="tip-card">
+                        <i class="fas fa-flask"></i>
+                        <h3>Soil Testing</h3>
+                        <p>Test your soil regularly to determine nutrient deficiencies and pH levels.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Balanced Nutrition</h3>
+                        <p>Use balanced NPK fertilizers based on crop requirements and soil test results.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Organic Matter</h3>
+                        <p>Incorporate organic compost and manure to improve soil fertility naturally.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Application Timing</h3>
+                        <p>Apply fertilizers at the right growth stages for maximum nutrient uptake.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-exclamation-triangle"></i>
+                        <h3>Avoid Overuse</h3>
+                        <p>Excessive fertilizer can harm crops and pollute groundwater. Follow recommended doses.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-sync-alt"></i>
+                        <h3>Crop Rotation</h3>
+                        <p>Rotate crops to maintain soil fertility and reduce fertilizer dependency.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Overlay -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search for tips, guides, or information...">
+            <button class="search-close" id="searchClose">&times;</button>
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </div>
+
+    <!-- Weather Widget Section -->
+    <section id="weather" class="weather-section">
+        <div class="container">
+            <h2 class="section-title">Weather Forecast</h2>
+            <div class="weather-widget">
+                <div class="weather-card">
+                    <div class="weather-icon"><i class="fas fa-sun"></i></div>
+                    <div class="weather-info">
+                        <h3>Today</h3>
+                        <div class="weather-temp">28°C</div>
+                        <p>Sunny</p>
+                        <div class="weather-details">
+                            <span><i class="fas fa-tint"></i> Humidity: 65%</span>
+                            <span><i class="fas fa-wind"></i> Wind: 15 km/h</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="weather-forecast">
+                    <div class="forecast-item">
+                        <div class="forecast-day">Tomorrow</div>
+                        <div class="forecast-icon"><i class="fas fa-cloud-sun"></i></div>
+                        <div class="forecast-temp">26°C / 18°C</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="forecast-day">Day 3</div>
+                        <div class="forecast-icon"><i class="fas fa-cloud-rain"></i></div>
+                        <div class="forecast-temp">24°C / 16°C</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="forecast-day">Day 4</div>
+                        <div class="forecast-icon"><i class="fas fa-cloud"></i></div>
+                        <div class="forecast-temp">25°C / 17°C</div>
+                    </div>
+                    <div class="forecast-item">
+                        <div class="forecast-day">Day 5</div>
+                        <div class="forecast-icon"><i class="fas fa-sun"></i></div>
+                        <div class="forecast-temp">27°C / 19°C</div>
+                    </div>
+                </div>
+            </div>
+            <div class="weather-alert">
+                <i class="fas fa-exclamation-triangle"></i>
+                <p>Good weather conditions for farming activities. Ideal for irrigation and field work.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Crop Calendar Section -->
+    <section id="calendar" class="calendar-section">
+        <div class="container">
+            <h2 class="section-title">Crop Calendar & Seasonal Guide</h2>
+            <div class="calendar-tabs">
+                <button class="cal-tab active" data-season="spring">Spring</button>
+                <button class="cal-tab" data-season="summer">Summer</button>
+                <button class="cal-tab" data-season="monsoon">Monsoon</button>
+                <button class="cal-tab" data-season="winter">Winter</button>
+            </div>
+            <div class="calendar-content">
+                <div class="season-panel active" id="spring-cal">
+                    <h3><i class="fas fa-seedling"></i> Spring Season (March - May)</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-card">
+                            <h4>Wheat</h4>
+                            <p><strong>Harvest:</strong> March-April</p>
+                            <p>Harvest when grains are golden and moisture content is 20-25%</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Vegetables</h4>
+                            <p><strong>Plant:</strong> March-April</p>
+                            <p>Tomatoes, Peppers, Cucumbers, Beans</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Rice</h4>
+                            <p><strong>Prepare:</strong> April-May</p>
+                            <p>Prepare seedbeds for transplanting</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="season-panel" id="summer-cal">
+                    <h3><i class="fas fa-sun"></i> Summer Season (June - August)</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-card">
+                            <h4>Rice</h4>
+                            <p><strong>Plant:</strong> June-July</p>
+                            <p>Transplant rice seedlings, ensure adequate water</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Cotton</h4>
+                            <p><strong>Plant:</strong> June</p>
+                            <p>Plant cotton seeds, focus on pest management</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Maize</h4>
+                            <p><strong>Plant:</strong> June-July</p>
+                            <p>Plant maize, ensure proper spacing</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="season-panel" id="monsoon-cal">
+                    <h3><i class="fas fa-cloud-rain"></i> Monsoon Season (September - November)</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-card">
+                            <h4>Rice</h4>
+                            <p><strong>Harvest:</strong> October-November</p>
+                            <p>Harvest when 80% grains are mature</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Pulses</h4>
+                            <p><strong>Plant:</strong> September-October</p>
+                            <p>Chickpeas, Lentils, Peas</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Oilseeds</h4>
+                            <p><strong>Plant:</strong> October</p>
+                            <p>Mustard, Sunflower, Groundnut</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="season-panel" id="winter-cal">
+                    <h3><i class="fas fa-snowflake"></i> Winter Season (December - February)</h3>
+                    <div class="calendar-grid">
+                        <div class="calendar-card">
+                            <h4>Wheat</h4>
+                            <p><strong>Plant:</strong> November-December</p>
+                            <p>Plant wheat seeds, ensure proper irrigation</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Vegetables</h4>
+                            <p><strong>Plant:</strong> December-January</p>
+                            <p>Cabbage, Cauliflower, Carrots, Spinach</p>
+                        </div>
+                        <div class="calendar-card">
+                            <h4>Barley</h4>
+                            <p><strong>Plant:</strong> November-December</p>
+                            <p>Plant barley, monitor for frost</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Calculators Section -->
+    <section id="calculators" class="calculators-section">
+        <div class="container">
+            <h2 class="section-title">Farming Calculators</h2>
+            <div class="calculators-grid">
+                <div class="calculator-card">
+                    <div class="calc-icon"><i class="fas fa-flask"></i></div>
+                    <h3>Fertilizer Calculator</h3>
+                    <p>Calculate the exact amount of fertilizer needed for your farm</p>
+                    <div class="calc-form">
+                        <div class="calc-input-group">
+                            <label>Farm Size (Acres)</label>
+                            <input type="number" id="fertFarmSize" placeholder="Enter acres" min="0" step="0.1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Crop Type</label>
+                            <select id="fertCropType">
+                                <option value="wheat">Wheat</option>
+                                <option value="rice">Rice</option>
+                                <option value="corn">Corn</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="vegetables">Vegetables</option>
+                            </select>
+                        </div>
+                        <button class="calc-button" onclick="calculateFertilizer()">Calculate</button>
+                        <div class="calc-result" id="fertResult"></div>
+                    </div>
+                </div>
+                <div class="calculator-card">
+                    <div class="calc-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Water Requirement Calculator</h3>
+                    <p>Determine water needs for your crops</p>
+                    <div class="calc-form">
+                        <div class="calc-input-group">
+                            <label>Farm Size (Acres)</label>
+                            <input type="number" id="waterFarmSize" placeholder="Enter acres" min="0" step="0.1">
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Crop Type</label>
+                            <select id="waterCropType">
+                                <option value="wheat">Wheat</option>
+                                <option value="rice">Rice</option>
+                                <option value="corn">Corn</option>
+                                <option value="cotton">Cotton</option>
+                                <option value="vegetables">Vegetables</option>
+                            </select>
+                        </div>
+                        <div class="calc-input-group">
+                            <label>Growth Stage</label>
+                            <select id="waterGrowthStage">
+                                <option value="seedling">Seedling</option>
+                                <option value="vegetative">Vegetative</option>
+                                <option value="flowering">Flowering</option>
+                                <option value="maturity">Maturity</option>
+                            </select>
+                        </div>
+                        <button class="calc-button" onclick="calculateWater()">Calculate</button>
+                        <div class="calc-result" id="waterResult"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pest & Disease Section -->
+    <section id="pest-disease" class="pest-section">
+        <div class="container">
+            <h2 class="section-title">Pest & Disease Identification</h2>
+            <div class="pest-search">
+                <input type="text" id="pestSearch" placeholder="Search for pest or disease...">
+                <button onclick="searchPest()"><i class="fas fa-search"></i></button>
+            </div>
+            <div class="pest-grid">
+                <div class="pest-card" data-pest="aphids">
+                    <div class="pest-image"><i class="fas fa-bug"></i></div>
+                    <h3>Aphids</h3>
+                    <p><strong>Symptoms:</strong> Curled leaves, sticky residue, stunted growth</p>
+                    <p><strong>Treatment:</strong> Neem oil, insecticidal soap, beneficial insects</p>
+                </div>
+                <div class="pest-card" data-pest="rust">
+                    <div class="pest-image"><i class="fas fa-leaf"></i></div>
+                    <h3>Rust Disease</h3>
+                    <p><strong>Symptoms:</strong> Orange/brown pustules on leaves</p>
+                    <p><strong>Treatment:</strong> Fungicides, resistant varieties, crop rotation</p>
+                </div>
+                <div class="pest-card" data-pest="blight">
+                    <div class="pest-image"><i class="fas fa-exclamation-triangle"></i></div>
+                    <h3>Blight</h3>
+                    <p><strong>Symptoms:</strong> Dark spots, wilting, rapid plant death</p>
+                    <p><strong>Treatment:</strong> Copper fungicides, proper spacing, ventilation</p>
+                </div>
+                <div class="pest-card" data-pest="caterpillar">
+                    <div class="pest-image"><i class="fas fa-bug"></i></div>
+                    <h3>Caterpillars</h3>
+                    <p><strong>Symptoms:</strong> Holes in leaves, defoliation</p>
+                    <p><strong>Treatment:</strong> Bt (Bacillus thuringiensis), handpicking, traps</p>
+                </div>
+                <div class="pest-card" data-pest="mildew">
+                    <div class="pest-image"><i class="fas fa-cloud"></i></div>
+                    <h3>Powdery Mildew</h3>
+                    <p><strong>Symptoms:</strong> White powdery coating on leaves</p>
+                    <p><strong>Treatment:</strong> Sulfur fungicides, improve air circulation</p>
+                </div>
+                <div class="pest-card" data-pest="nematode">
+                    <div class="pest-image"><i class="fas fa-circle"></i></div>
+                    <h3>Nematodes</h3>
+                    <p><strong>Symptoms:</strong> Root galls, stunted growth, yellowing</p>
+                    <p><strong>Treatment:</strong> Crop rotation, resistant varieties, soil solarization</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Daily Schedule Section -->
+    <section id="schedule" class="schedule-section">
+        <div class="container">
+            <h2 class="section-title">Daily Farming Schedule</h2>
+            <div class="schedule-container">
+                <div class="schedule-card">
+                    <div class="schedule-time">6:00 AM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-sun"></i> Morning Inspection</h3>
+                        <p>Check crops for pests, diseases, and overall health. Inspect irrigation systems.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">7:00 AM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-tint"></i> Watering</h3>
+                        <p>Water crops if needed. Check soil moisture levels.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">9:00 AM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-tools"></i> Field Work</h3>
+                        <p>Weeding, pruning, and other maintenance activities.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">12:00 PM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-utensils"></i> Break</h3>
+                        <p>Rest and have lunch. Avoid working during peak sun hours.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">3:00 PM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-flask"></i> Fertilizer Application</h3>
+                        <p>Apply fertilizers if scheduled. Mix and prepare for next day.</p>
+                    </div>
+                </div>
+                <div class="schedule-card">
+                    <div class="schedule-time">5:00 PM</div>
+                    <div class="schedule-content">
+                        <h3><i class="fas fa-clipboard-check"></i> Evening Check</h3>
+                        <p>Final inspection. Plan next day's activities. Record observations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">What Farmers Say</h2>
+            <div class="testimonials-slider">
+                <div class="testimonial-card active">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"FarmCare has transformed my farming practices. The daily schedules and tips have increased my crop yield by 30%!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h4>Rajesh Kumar</h4>
+                                <p>Wheat Farmer, Punjab</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The water management tips helped me save 40% on water costs. The fertilizer calculator is incredibly accurate!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h4>Priya Sharma</h4>
+                                <p>Vegetable Farmer, Maharashtra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="quote-icon"><i class="fas fa-quote-left"></i></div>
+                        <p>"The pest identification feature helped me catch diseases early. Excellent service and support!"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar"><i class="fas fa-user"></i></div>
+                            <div class="author-info">
+                                <h4>Amit Patel</h4>
+                                <p>Cotton Farmer, Gujarat</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active" data-slide="0"></span>
+                <span class="dot" data-slide="1"></span>
+                <span class="dot" data-slide="2"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How do I register my farm?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Simply fill out the registration form with your farm details including location, crop type, farm size, and other relevant information. Once submitted, you'll receive personalized farming guidance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Are the tips personalized to my location?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes! Based on your location, crop type, and farm details, we provide customized tips and schedules that are specific to your region's climate and conditions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How accurate are the calculators?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our calculators are based on agricultural research and standard farming practices. However, we recommend consulting with local agricultural experts for precise calculations.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is this service free?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, basic features including tips, calculators, and schedules are free. Premium consultation services may be available for advanced guidance.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How often are the schedules updated?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Daily schedules are updated every day based on weather conditions and crop growth stages. You'll receive notifications for important farming activities.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Resources Section -->
+    <section id="resources" class="resources-section">
+        <div class="container">
+            <h2 class="section-title">Downloadable Resources</h2>
+            <div class="resources-grid">
+                <div class="resource-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Complete Farming Guide</h3>
+                    <p>Comprehensive guide covering all aspects of modern farming</p>
+                    <button class="download-btn" onclick="downloadResource('guide')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Pest & Disease Handbook</h3>
+                    <p>Identify and treat common pests and diseases</p>
+                    <button class="download-btn" onclick="downloadResource('pest')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Fertilizer Application Guide</h3>
+                    <p>Detailed fertilizer recommendations for different crops</p>
+                    <button class="download-btn" onclick="downloadResource('fertilizer')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+                <div class="resource-card">
+                    <i class="fas fa-file-pdf"></i>
+                    <h3>Water Management Manual</h3>
+                    <p>Efficient irrigation and water conservation techniques</p>
+                    <button class="download-btn" onclick="downloadResource('water')">
+                        <i class="fas fa-download"></i> Download PDF
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3><i class="fas fa-seedling"></i> FarmCare</h3>
+                    <p>Empowering farmers with modern agricultural solutions and expert guidance.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#form">Register</a></li>
+                        <li><a href="#tips">Tips</a></li>
+                        <li><a href="#calculators">Calculators</a></li>
+                        <li><a href="#calendar">Crop Calendar</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p><i class="fas fa-envelope"></i> info@farmcare.com</p>
+                    <p><i class="fas fa-phone"></i> +91 9834455934</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>2026 FarmCare. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
